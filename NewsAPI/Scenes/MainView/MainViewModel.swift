@@ -30,7 +30,7 @@ class MainViewModel: StatefulViewModel<MainState.Change> {
     
     var currentPage = 1
     var currentSearchPage = 1
-    var testquery: String = ""
+    var searchQuery: String = ""
     
     func fetchData() {
         NewsRequest.shared.getTopStories(with: currentPage) { [weak self] result in
@@ -74,7 +74,7 @@ class MainViewModel: StatefulViewModel<MainState.Change> {
     }
     
     func searchData() {
-        NewsRequest.shared.getSearch(with: self.testquery , page: currentSearchPage) { [weak self] result in
+        NewsRequest.shared.getSearch(with: self.searchQuery , page: currentSearchPage) { [weak self] result in
             switch result {
             case .success(let articles):
                 self?.newsData = articles.compactMap({

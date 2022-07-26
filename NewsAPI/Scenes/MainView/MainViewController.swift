@@ -70,7 +70,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIScro
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == tableView.numberOfSections - 1 &&
             indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
-            if viewModel.testquery == "" {
+            if viewModel.searchQuery == "" {
                 viewModel.fetchData()
             } else {
                 viewModel.searchData()
@@ -82,7 +82,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource, UIScro
 extension MainViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text, !searchBarText.isEmpty  else { return }
-        viewModel.testquery  = searchBarText
+        viewModel.searchQuery  = searchBarText
         viewModel.searchData()
     }
 }

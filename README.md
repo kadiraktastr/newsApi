@@ -3,13 +3,18 @@
 This is a demo app which use newsapi
 
 ## Features
--DailyFeed iOS App designed.
+ -DailyFeed iOS App designed.
 
--Favorite Articles.
+- Favorite Articles.
 
--Search anything.
+- Search anything.
 
--Pagination
+- Pagination
+
+- Dark Mode
+
+- Share Article Url
+
 
 
 ## Screenshots
